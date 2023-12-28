@@ -16,6 +16,7 @@ public class AttHeaMan : MonoBehaviour
     public Camera cam;
     public float range = 5f;
     public bool lookatitem = false;
+    public float mana = 0f;
 
     //damage
     public float enemyhealth = 2f;
@@ -95,6 +96,7 @@ public class AttHeaMan : MonoBehaviour
                     HealHold = false;
                     AttackHold = false;
                     Destroy(Ornaments.transform.gameObject);
+                    
                 }
             }
             if(Ornaments.collider.tag == "Attack")
@@ -150,16 +152,20 @@ public class AttHeaMan : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.E) && ManaHold)
             {
                 ManaAm -= 1f;
+                mana += 1f;
             }
         }
-        if(AttAm != 0 && lookatitem == false)
+        if(mana >= 1)
         {
-            if(Input.GetKeyDown(KeyCode.E) && AttackHold)
+            if(AttAm != 0 && lookatitem == false)
             {
-                attacktimer = 2f;
-                AttAm -= 1f;
-                AttackBox.SetActive(true);
-                attcked = true;
+                if(Input.GetKeyDown(KeyCode.E) && AttackHold)
+                {
+                    attacktimer = 1f;
+                    AttAm -= 1f;
+                    AttackBox.SetActive(true);
+                    attcked = true;
+                }
             }
         }
 
@@ -185,6 +191,11 @@ public class AttHeaMan : MonoBehaviour
         {
             ManaHold = false;
             Mana.SetActive(false);
+            Debug.Log("NO MANAAMMO");
+        }
+        if(mana >= 0)
+        {
+            Debug.Log("no mana");
         }
         if(AttAm <= 0)
         {
