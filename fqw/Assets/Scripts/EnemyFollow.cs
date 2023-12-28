@@ -23,14 +23,14 @@ public class EnemyFollow : MonoBehaviour
     public GameObject enemyobj6;
     public GameObject enemyobj7;
     public GameObject enemyobj8;
-    public Transform pos1;
-    public Transform pos2;
-    public Transform pos3;
-    public Transform pos4;
-    public Transform pos5;
-    public Transform pos6;
-    public Transform pos7;
-    public Transform pos8;
+    public GameObject pos1;
+    public GameObject pos2;
+    public GameObject pos3;
+    public GameObject pos4;
+    public GameObject pos5;
+    public GameObject pos6;
+    public GameObject pos7;
+    public GameObject pos8;
     public bool follow1 = false;
     public bool follow2 = false;
     public bool follow3 = false;
@@ -51,14 +51,14 @@ public class EnemyFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemyobj1.transform.position = pos1.position;
-        enemyobj2.transform.position = pos2.position;
-        enemyobj3.transform.position = pos3.position;
-        enemyobj4.transform.position = pos4.position;
-        enemyobj5.transform.position = pos5.position;
-        enemyobj6.transform.position = pos6.position;
-        enemyobj7.transform.position = pos7.position;
-        enemyobj8.transform.position = pos8.position;
+        enemyobj1.transform.position = pos1.transform.position;
+        enemyobj2.transform.position = pos2.transform.position;
+        enemyobj3.transform.position = pos3.transform.position;
+        enemyobj4.transform.position = pos4.transform.position;
+        enemyobj5.transform.position = pos5.transform.position;
+        enemyobj6.transform.position = pos6.transform.position;
+        enemyobj7.transform.position = pos7.transform.position;
+        enemyobj8.transform.position = pos8.transform.position;
     }
 
     // Update is called once per frame
@@ -87,6 +87,7 @@ public class EnemyFollow : MonoBehaviour
         if(foltim1 <= 0)
         {
             follow1 = false;
+            pos1.SetActive(false);
             Enemy1.SetDestination(Player.position);
         }
 
@@ -109,6 +110,7 @@ public class EnemyFollow : MonoBehaviour
         }
         if(foltim2 <= 0)
         {
+            pos2.SetActive(false);
             follow2 = false;
             Enemy2.SetDestination(Player.position);
         }
@@ -132,6 +134,7 @@ public class EnemyFollow : MonoBehaviour
 
         if(foltim3 <= 0)
         {
+            pos3.SetActive(false);
             follow3 = false;
             Enemy3.SetDestination(Player.position);
         }
@@ -155,6 +158,7 @@ public class EnemyFollow : MonoBehaviour
 
         if(foltim4 <= 0)
         {
+            pos4.SetActive(false);
             follow4 = false;
             Enemy4.SetDestination(Player.position);
         }
@@ -177,6 +181,7 @@ public class EnemyFollow : MonoBehaviour
         }
         if(foltim5 <= 0)
         {
+            pos5.SetActive(false);
             follow5 = false;
             Enemy5.SetDestination(Player.position);
         }
@@ -199,6 +204,7 @@ public class EnemyFollow : MonoBehaviour
         }
         if(foltim6 <= 0)
         {
+            pos6.SetActive(false);
             follow6 = false;
             Enemy6.SetDestination(Player.position);
         }
@@ -221,6 +227,7 @@ public class EnemyFollow : MonoBehaviour
         }
         if(foltim7 <= 0)
         {
+            pos7.SetActive(false);
             follow7 = false;
             Enemy7.SetDestination(Player.position);
         }
@@ -243,6 +250,7 @@ public class EnemyFollow : MonoBehaviour
         }
         if(foltim8 <= 0)
         {
+            pos8.SetActive(false);
             follow8 = false;
             Enemy8.SetDestination(Player.position);
         }
@@ -266,49 +274,49 @@ public class EnemyFollow : MonoBehaviour
 
     public void RSP1()
     {
-        Enemy1.SetDestination(Player.position);
+        enemyobj1.transform.position = pos1.transform.position;
         Dam.hit1 = false;
         
     }
     public void RSP2()
     {
-        Enemy2.SetDestination(Player.position);
+      enemyobj2.transform.position = pos2.transform.position;
         Dam.hit2 = false;
         
     }
     public void RSP3()
     {
-        Enemy3.SetDestination(Player.position);
+       enemyobj3.transform.position = pos3.transform.position;
         Dam.hit3 = false;
         
     }
     public void RSP4()
     {
-        Enemy4.SetDestination(Player.position);
+        enemyobj4.transform.position = pos4.transform.position;
         Dam.hit4 = false;
         
     }
     public void RSP5()
     {
-        Enemy5.SetDestination(Player.position);
+        enemyobj5.transform.position = pos5.transform.position;
         Dam.hit5 = false;
         
     }
     public void RSP6()
     {
-        Enemy6.SetDestination(Player.position);
+        enemyobj6.transform.position = pos6.transform.position;
         Dam.hit6 = false;
         
     }
     public void RSP7()
     {
-         Enemy7.SetDestination(Player.position);
+        enemyobj7.transform.position = pos7.transform.position;
         Dam.hit7 = false;
         
     }
     public void RSP8()
     {
-         Enemy8.SetDestination(Player.position);
+        enemyobj8.transform.position = pos8.transform.position;
         Dam.hit8 = false;
         
     }

@@ -167,6 +167,7 @@ public class DamageArea : MonoBehaviour
             other.gameObject.SetActive(false);
             hit1 = true;
             EF.follow1 = true;
+            EF.pos1.SetActive(true);
         }
        
 
@@ -175,6 +176,7 @@ public class DamageArea : MonoBehaviour
             other.gameObject.SetActive(false);
             hit2 = true;
             EF.follow2 = true;
+            EF.pos2.SetActive(true);
         }
         
 
@@ -183,6 +185,7 @@ public class DamageArea : MonoBehaviour
             other.gameObject.SetActive(false);
             hit3 = true;
             EF.follow3 = true;
+            EF.pos3.SetActive(true);
         }
         
 
@@ -191,6 +194,7 @@ public class DamageArea : MonoBehaviour
             other.gameObject.SetActive(false);
             hit4 = true;
             EF.follow4 = true;
+            EF.pos4.SetActive(true);
         }
         
 
@@ -199,6 +203,7 @@ public class DamageArea : MonoBehaviour
             other.gameObject.SetActive(false);
             hit5 = true;
             EF.follow5 = true;
+            EF.pos5.SetActive(true);
         }
         
 
@@ -207,6 +212,7 @@ public class DamageArea : MonoBehaviour
             other.gameObject.SetActive(false);
             hit6 = true;
             EF.follow6 = true;
+            EF.pos6.SetActive(true);
         }
         
 
@@ -215,6 +221,7 @@ public class DamageArea : MonoBehaviour
             other.gameObject.SetActive(false);
             hit7 = true;
             EF.follow7 = true;
+            EF.pos7.SetActive(true);
         }
         
 
@@ -223,6 +230,7 @@ public class DamageArea : MonoBehaviour
             other.gameObject.SetActive(false);
             hit8 = true;
             EF.follow8 = true;
+            EF.pos8.SetActive(true);
         }
         
     }
