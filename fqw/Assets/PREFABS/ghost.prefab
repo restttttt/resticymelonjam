@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerPos: {fileID: 0}
   enemyAI: {fileID: 0}
-  EnemyHealth: 10
+  EnemyHealth: 20
 --- !u!1 &7289360475540508871
 GameObject:
   m_ObjectHideFlags: 0

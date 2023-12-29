@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class AxeAttack : MonoBehaviour
 {
+    public Animator anim;
+    public AttHeaMan charmmanager;
     public int AxeDamage = 10;
     public BoxCollider boxCol;
     public int FrameCounter = 0;
@@ -26,23 +28,29 @@ public class AxeAttack : MonoBehaviour
     void FixedUpdate()
     {
         FrameCounter++;
-        if (FrameCounter > 150 && !Attacking)
+        if (FrameCounter > 30 && !Attacking)
         {
             readyToAttack = true;
         }
-        if (readyToAttack)
+        if (readyToAttack && charmmanager.mana != 0)
         {
             if (Input.GetMouseButton(0))
             {
+                charmmanager.mana -= 1f;
                 Attacking = true;
                 readyToAttack = false;
+                anim.SetTrigger("swing");
+                if(charmmanager.Axedam)
+                {
+                    charmmanager.attack -= 1f;
+                }
             }
         }
         if (Attacking)
         {
             boxCol.enabled = true;
             FrameCounter2++;
-            if(FrameCounter2 > 150)
+            if(FrameCounter2 > 30)
             {
                 FrameCounter = 0;
                 FrameCounter2 = 0;

@@ -6,7 +6,7 @@ public class EnemyAI : MonoBehaviour
 {
     public Transform PlayerPos;
     public NavMeshAgent enemyAI;
-    public int EnemyHealth = 10;
+    public int EnemyHealth = 20;
     // Start is called before the first frame update
     void Start()
     {

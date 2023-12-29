@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AttHeaMan : MonoBehaviour
 {
+    public HealthSystem healthsys;
+    public AxeAttack Axeattk;
     public GameObject Heal;
     public GameObject Mana;
     public GameObject Attack;
@@ -17,7 +19,9 @@ public class AttHeaMan : MonoBehaviour
     public float range = 5f;
     public bool lookatitem = false;
     public float mana = 0f;
+    public float attack = 0f;
     public AudioSource pickUp;
+    public bool Axedam = false;
 
     
     // Start is called before the first frame update
@@ -143,6 +147,7 @@ public class AttHeaMan : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.E) && HealHold)
             {
                 HealAm -= 1f;
+                healthsys.PlayerHealth += 10;
             }
         }
         if(ManaAm != 0 && lookatitem == false)
@@ -150,23 +155,26 @@ public class AttHeaMan : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.E) && ManaHold)
             {
                 ManaAm -= 1f;
-                mana += 1f;
+                mana += 5f;
             }
         }
-        if(mana != 0)
+        if(AttAm != 0 && lookatitem == false)
         {
-
-            
-            if(AttAm != 0 && lookatitem == false)
+            if(Input.GetKeyDown(KeyCode.E) && AttackHold)
             {
-                if(Input.GetKeyDown(KeyCode.E) && AttackHold)
-                {
-                    
-                    AttAm -= 1f;
-                    mana -= 1f;
-                    
-                }
+                attack += 1f;
+                AttAm -= 1f;
             }
+        }
+        if(mana != 0 && attack != 0)
+        {
+            Axeattk.AxeDamage = 20;
+            Axedam = true;
+        }
+        else
+        {
+            Axeattk.AxeDamage = 10;
+            Axedam = false;
         }
 
 
