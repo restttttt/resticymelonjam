@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -60,5 +61,10 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(EnemyPrefab, spawnPoints[0].transform);
         }
+    }
+
+    public void Respawn()
+    {
+        SceneManager.LoadScene(0);
     }
 }

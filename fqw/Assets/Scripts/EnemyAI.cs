@@ -18,5 +18,9 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         enemyAI.SetDestination(PlayerPos.position);
+        if(EnemyHealth == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

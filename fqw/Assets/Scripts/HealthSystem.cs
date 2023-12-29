@@ -5,6 +5,8 @@ using UnityEngine;
 public class HealthSystem : MonoBehaviour
 {
     public int PlayerHealth = 100;
+    public GameObject DedScreen;
+
     void OnCollisionEnter(Collision col)
     {
         if(col.gameObject.tag == "Enemy")
@@ -13,5 +15,13 @@ public class HealthSystem : MonoBehaviour
             Debug.Log("PlayerHealth = " + PlayerHealth);
         }
     }
+    void Update()
+    {
+        if (PlayerHealth == 0)
+        {
+            DedScreen.SetActive(true);
+        }
+    }
+
 
 }
