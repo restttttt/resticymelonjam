@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0012199378, g: 0.0013233494, b: 0.0012199378, a: 1}
+  m_IndirectSpecularColor: {r: 0.0012073659, g: 0.0013261206, b: 0.0012073659, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2304,7 +2304,7 @@ GameObject:
   - component: {fileID: 919132149617846633}
   m_Layer: 0
   m_Name: Axe
-  m_TagString: Untagged
+  m_TagString: weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2335,9 +2335,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AxeDamage: 10
-  boxCol: {fileID: 0}
-  i: 0
+  boxCol: {fileID: 919132149617846633}
+  FrameCounter: 0
+  FrameCounter2: 0
   Attacking: 0
+  readyToAttack: 0
 --- !u!4 &969869297805645885
 Transform:
   m_ObjectHideFlags: 0
@@ -3409,20 +3411,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f20a4c4e9f993439f6fbb31af4987e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Heal: {fileID: 8573990164141139127}
-  Mana: {fileID: 919132148422970006}
-  Attack: {fileID: 449931497956377223}
-  HealHold: 0
-  ManaHold: 0
-  AttackHold: 0
-  HealAm: 0
-  ManaAm: 0
-  AttAm: 0
-  cam: {fileID: 7060500157753873935}
-  range: 5
-  lookatitem: 0
-  mana: 0
-  pickUp: {fileID: 593034964}
 --- !u!1001 &7689430300271045426
 PrefabInstance:
   m_ObjectHideFlags: 0
