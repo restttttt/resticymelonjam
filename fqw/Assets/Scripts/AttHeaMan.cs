@@ -16,6 +16,7 @@ public class AttHeaMan : MonoBehaviour
     public Camera cam;
     public float range = 5f;
     public bool lookatitem = false;
+    public float mana = 0f;
 
     
     // Start is called before the first frame update
@@ -89,6 +90,7 @@ public class AttHeaMan : MonoBehaviour
                     HealHold = false;
                     AttackHold = false;
                     Destroy(Ornaments.transform.gameObject);
+                    
                 }
             }
             if(Ornaments.collider.tag == "Attack")
@@ -131,7 +133,7 @@ public class AttHeaMan : MonoBehaviour
             ManaHold = false;
         }
 
-        //damage
+        
         if(HealAm != 0 && lookatitem == false)
         {
             if(Input.GetKeyDown(KeyCode.E) && HealHold)
@@ -144,15 +146,22 @@ public class AttHeaMan : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.E) && ManaHold)
             {
                 ManaAm -= 1f;
+                mana += 1f;
             }
         }
-        if(AttAm != 0 && lookatitem == false)
+        if(mana != 0)
         {
-            if(Input.GetKeyDown(KeyCode.E) && AttackHold)
+
+            
+            if(AttAm != 0 && lookatitem == false)
             {
-                
-                AttAm -= 1f;
-                
+                if(Input.GetKeyDown(KeyCode.E) && AttackHold)
+                {
+                    
+                    AttAm -= 1f;
+                    mana -= 1f;
+                    
+                }
             }
         }
 
