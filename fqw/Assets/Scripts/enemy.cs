@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class enemy : MonoBehaviour
-{
-    public DamageArea Dam;
+{   //public DamageArea Dam;
     public GameObject player;
     public GameObject enemyPrefab;
     public int numberOfEnemies = 8;
@@ -26,11 +25,6 @@ public class enemy : MonoBehaviour
     //respawn
     public void Update()
     {
-        if (Dam.defeated)
-    {
-        
-        timerrespawn = 5f;
-    }
 
     if (timerrespawn > 0)
     {
