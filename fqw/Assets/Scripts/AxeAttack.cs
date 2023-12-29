@@ -7,26 +7,49 @@ public class AxeAttack : MonoBehaviour
 {
     public int AxeDamage = 10;
     public BoxCollider boxCol;
-    public int i = 0;
+    public int FrameCounter = 0;
+    public int FrameCounter2 = 0;
     public bool Attacking;
+    public bool readyToAttack;
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private BoxCollider GetBoxCol()
     {
-        i++;
-        if (Input.GetMouseButton(0) && i == 300)
+        return boxCol;
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        FrameCounter++;
+        if (FrameCounter > 150 && !Attacking)
         {
-            Attacking = true;
-            boxCol.gameObject.SetActive(true);
-        }else if (i == 600)
+            readyToAttack = true;
+        }
+        if (readyToAttack)
         {
-            Attacking = false;
-            boxCol.gameObject.SetActive(false);
+            if (Input.GetMouseButton(0))
+            {
+                Attacking = true;
+                readyToAttack = false;
+            }
+        }
+        if (Attacking)
+        {
+            boxCol.enabled = true;
+            FrameCounter2++;
+            if(FrameCounter2 > 150)
+            {
+                FrameCounter = 0;
+                FrameCounter2 = 0;
+                readyToAttack = true;
+                Attacking = false;
+                boxCol.enabled = false;
+            }           
         }
 
     }

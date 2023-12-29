@@ -23,4 +23,12 @@ public class EnemyAI : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    void OnTriggerEnter(UnityEngine.Collider other)
+    {
+        Debug.Log("DMG");
+        if (other.gameObject.tag == "weapon")
+        {
+            EnemyHealth -= other.gameObject.GetComponent<AxeAttack>().AxeDamage;
+        }
+    }
 }
