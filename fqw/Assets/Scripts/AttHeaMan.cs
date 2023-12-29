@@ -17,6 +17,7 @@ public class AttHeaMan : MonoBehaviour
     public float range = 5f;
     public bool lookatitem = false;
     public float mana = 0f;
+    public AudioSource pickUp;
 
     
     // Start is called before the first frame update
@@ -65,6 +66,7 @@ public class AttHeaMan : MonoBehaviour
                 lookatitem = true;
                 if(Input.GetKeyDown(KeyCode.E))
                 {
+                    pickUp.Play();
                     Debug.Log("+1 Heal");
                     Heal.SetActive(true);
                     HealAm += 1f;
@@ -81,6 +83,7 @@ public class AttHeaMan : MonoBehaviour
                 lookatitem = true;
                 if(Input.GetKeyDown(KeyCode.E))
                 {
+                    pickUp.Play();
                     Debug.Log("+1 Man");
                     Mana.SetActive(true);
                     ManaAm += 1f;
@@ -98,6 +101,7 @@ public class AttHeaMan : MonoBehaviour
                 lookatitem = true;
                 if(Input.GetKeyDown(KeyCode.E))
                 {
+                    pickUp.Play();
                     Debug.Log("+1 att");
                     Attack.SetActive(true);
                     AttAm += 1f;
