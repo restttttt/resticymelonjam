@@ -14,6 +14,8 @@ public class enemySpawnManager : MonoBehaviour
     void Start()
     {
         spawnPoints = GameObject.FindGameObjectsWithTag("Spawn Point");
+        EnemiesInScene = GameObject.FindGameObjectsWithTag("Enemy");
+        Spawn();
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -46,7 +48,7 @@ public class enemySpawnManager : MonoBehaviour
         RandomNum = Random.Range(0,10);
 
         NumOfEnemies = EnemiesInScene.Length;
-        if (NumOfEnemies < 10 && RandomNum % 2 == 0)
+        if (NumOfEnemies < 10)
         {
             foreach(GameObject obj in spawnPoints)
             {
