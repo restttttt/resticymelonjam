@@ -1,70 +1,37 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public int NumOfEnemies;
-    public GameObject[] EnemiesInScene;
-    public GameObject[] spawnPoints;
-    public int RandomNum;
-    public int RandomNum2;
-    public GameObject EnemyPrefab;
-    private int i = 0;
+    public int i = 0;
+    public int j = 0;
+    public GameObject[] TalismanPrefabs;
+    public GameObject[] Charms;
+    public GameObject[] CharmSpawnPoints;
+    public GameObject[] TalismanSpawnPoints;
 
+    // Update is called once per frame
     void Start()
     {
-        spawnPoints = GameObject.FindGameObjectsWithTag("Spawn Point");
-    }
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        EnemiesInScene = GameObject.FindGameObjectsWithTag("Enemy");
-        RandomNum2 = Random.Range(0,100);
-        if (i == 500)
-        {
-            Debug.Log("i value 500");
-            if (RandomNum2%2 == 0)
-            {
-                Spawn();
-            }
-            else if (EnemiesInScene.Length == 0)
-            {
-                Spawn();
-            }
-            i = 0;
-        }
+        TalismanSpawnPoints = GameObject.FindGameObjectsWithTag("Talisman Spawnpoint");
+        CharmSpawnPoints = GameObject.FindGameObjectsWithTag("Item Spawnpoint");
 
-        i++;
-    }
-
-    void Spawn()
-    {
-        Debug.Log("Spawn func called");
-        RandomNum = Random.Range(0,10);
-
-        NumOfEnemies = EnemiesInScene.Length;
-        if (NumOfEnemies < 10 && RandomNum % 2 == 0)
+        /*foreach(GameObject obj in TalismanPrefabs)
         {
-            foreach(GameObject obj in spawnPoints)
+            Debug.Log("Inst 1  " + i);
+            Instantiate(obj, TalismanSpawnPoints[i].transform.position, Quaternion.identity);
+            i++;
+        }*/
+        foreach (GameObject obj in CharmSpawnPoints)
+        {
+            Debug.Log("Inst 2  " + j);
+            if(j>=Charms.Length)
             {
-                Instantiate(EnemyPrefab, obj.transform);
+                j = 0;
             }
+            Instantiate(Charms[j], obj.gameObject.transform.position, Quaternion.identity);
+            j++;
         }
-        else if (NumOfEnemies < 15 && RandomNum % 4 == 0)
-        {
-            foreach(GameObject obj in spawnPoints)
-            {
-                Instantiate(EnemyPrefab, obj.transform);
-            }
-        }
-        else
-        {
-            Instantiate(EnemyPrefab, spawnPoints[0].transform);
-        }
-    }
-
-    public void Respawn()
-    {
-        SceneManager.LoadScene(0);
     }
 }

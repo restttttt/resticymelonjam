@@ -11,6 +11,8 @@ TagManager:
   - Spawn Point
   - weapon
   - Polaroid
+  - Item Spawnpoint
+  - Talisman Spawnpoint
   layers:
   - Default
   - TransparentFX
