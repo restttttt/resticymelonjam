@@ -43,9 +43,9 @@ public class EnemyAI : MonoBehaviour
             Instantiate(axe.bloodVFX, axe.bloodpos.transform.position, axe.transform.rotation);
         }else if (other.gameObject.CompareTag("Polaroid"))
         {
-            Slash.Play();
+        
             EnemyHealth -= other.gameObject.GetComponent<PolaroidAttack>().PolaroidDmg;
-            hit = true;
+            
         }
     }
 }

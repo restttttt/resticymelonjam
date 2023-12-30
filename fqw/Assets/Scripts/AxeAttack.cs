@@ -6,6 +6,7 @@ using UnityEngine;
 public class AxeAttack : MonoBehaviour
 {
     public Animator anim;
+    public AudioSource slash;
     public EnemyAI enemyai;
     public AttHeaMan charmmanager;
     public int AxeDamage = 5;
@@ -45,6 +46,10 @@ public class AxeAttack : MonoBehaviour
                 Attacking = true;
                 readyToAttack = false;
                 anim.SetTrigger("swing");
+                if(enemyai.hit == false)
+                {
+                    slash.Play();
+                }
 
                 if(charmmanager.Axedam)
                 {

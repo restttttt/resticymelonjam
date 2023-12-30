@@ -24,7 +24,7 @@ public class talismanSpawnManager1 : MonoBehaviour
         RandomNum2 = Random.Range(0,100);
         if (i >= 250)
         {
-            Debug.Log("i value 500+");
+            Debug.Log("i value 250+");
             if (RandomNum2%2 == 0)
             {
                 Spawn();

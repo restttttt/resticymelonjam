@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class talismanget : MonoBehaviour
 {
@@ -9,10 +10,9 @@ public class talismanget : MonoBehaviour
     public Camera cam;
     public float range = 5f;
     public AudioSource get;
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
+    public AttHeaMan at;
+    public float charm = 0f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +23,15 @@ public class talismanget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
+
+
+
+        
+
+        
+        
         score1 = score;
         RaycastHit hit;
 if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
@@ -34,6 +43,8 @@ if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, rang
             Destroy(hit.transform.gameObject);
             get.Play();
             score += 1f;
+            charm += 1f;
+         
         }
     }
 }
