@@ -7,6 +7,12 @@ public class talismanget : MonoBehaviour
     public float score = 0f;
     public Camera cam;
     public float range = 5f;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+    
     // Start is called before the first frame update
     void Start()
     {
