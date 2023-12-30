@@ -31,13 +31,13 @@ public class EnemyAI : MonoBehaviour
     {
         
         Debug.Log("DMG");
-        if (other.gameObject.tag == "weapon")
+        if (other.gameObject.CompareTag("weapon"))
         {
 
             EnemyHealth -= other.gameObject.GetComponent<AxeAttack>().AxeDamage;
             hit = true;
             Instantiate(axe.bloodVFX, axe.bloodpos.transform.position, axe.transform.rotation);
-        }else if (other.gameObject.tag == "Polaroid")
+        }else if (other.gameObject.CompareTag("Polaroid"))
         {
             EnemyHealth -= other.gameObject.GetComponent<PolaroidAttack>().PolaroidDmg;
             hit = true;
