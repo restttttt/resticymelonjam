@@ -14,6 +14,8 @@ public class EnemySpawnManager : MonoBehaviour
     void Start()
     {
         spawnPoints = GameObject.FindGameObjectsWithTag("Spawn Point");
+        EnemiesInScene = GameObject.FindGameObjectsWithTag("Enemy");
+        Spawn();
     }
     // Update is called once per frame
     void FixedUpdate()
