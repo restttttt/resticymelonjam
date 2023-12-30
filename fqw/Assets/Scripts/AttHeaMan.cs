@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AttHeaMan : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class AttHeaMan : MonoBehaviour
     public float attack = 0f;
     public AudioSource pickUp;
     public bool Axedam = false;
+    public Slider ManaSlider;
 
     public AudioSource useCharm;
 
@@ -42,6 +44,7 @@ public class AttHeaMan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ManaSlider.value = mana;
         lookatitem = false;
 
         if(HealHold == true)

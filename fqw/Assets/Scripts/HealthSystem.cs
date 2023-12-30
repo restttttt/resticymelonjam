@@ -5,9 +5,7 @@ public class HealthSystem : MonoBehaviour
 {
     public int PlayerHealth = 100;
     public GameObject DedScreen;
-    public Image Blood;
-    private Color color;
-    public bool JustChanged;
+    public Slider slider;
 
     void OnCollisionEnter(Collision col)
     {
@@ -15,20 +13,15 @@ public class HealthSystem : MonoBehaviour
         {
             PlayerHealth -= 10;
             Debug.Log("PlayerHealth = " + PlayerHealth);
-            JustChanged = true;
         }
     }
     void Update()
     {
-        color = Blood.color;
-        color.a-= PlayerHealth;
-
-        
-        Blood.color = color;
         if (PlayerHealth == 0)
         {
             DedScreen.SetActive(true);
         }
+        slider.value = PlayerHealth;
         
     }
 
