@@ -72,6 +72,11 @@ public class AttHeaMan : MonoBehaviour
         RaycastHit Ornaments;
         if(Physics.Raycast(cam.transform.position, cam.transform.forward, out Ornaments, range))
         {
+
+            if(Ornaments.transform.tag == "Talisman")
+            {
+                lookatitem = true;
+            }
             //Debug.Log(Ornaments.transform.tag);
             if(Ornaments.transform.tag == "Heal")
             {

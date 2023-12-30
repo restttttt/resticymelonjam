@@ -10,6 +10,13 @@ public class HealthSystem : MonoBehaviour
     
     public Slider slider;
 
+    public GameObject cam1;
+    public GameObject cam2;
+
+    void Start()
+    {
+        
+    }
     void OnCollisionEnter(Collision col)
     {
         if(col.gameObject.tag == "Enemy")
@@ -20,10 +27,7 @@ public class HealthSystem : MonoBehaviour
     }
     void Update()
     {
-        if (PlayerHealth == 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+        
         slider.value = PlayerHealth;
         
     }
