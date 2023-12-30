@@ -20,9 +20,9 @@ public class EnemySpawnManager : MonoBehaviour
     {
         EnemiesInScene = GameObject.FindGameObjectsWithTag("Enemy");
         RandomNum2 = Random.Range(0,100);
-        if (i == 500)
+        if (i >= 500)
         {
-            Debug.Log("i value 500");
+            Debug.Log("i value 500+");
             if (RandomNum2%2 == 0)
             {
                 Spawn();
@@ -30,6 +30,9 @@ public class EnemySpawnManager : MonoBehaviour
             else if (EnemiesInScene.Length == 0)
             {
                 Spawn();
+            }else
+            {
+                Instantiate(EnemyPrefab, spawnPoints[0].transform.position, Quaternion.identity);
             }
             i = 0;
         }
@@ -47,24 +50,19 @@ public class EnemySpawnManager : MonoBehaviour
         {
             foreach(GameObject obj in spawnPoints)
             {
-                Instantiate(EnemyPrefab, obj.transform);
+                Instantiate(EnemyPrefab, obj.transform.position, Quaternion.identity);
             }
         }
-        else if (NumOfEnemies < 15 && RandomNum % 4 == 0)
+        else if (NumOfEnemies < 15 && RandomNum % 2 == 0)
         {
             foreach(GameObject obj in spawnPoints)
             {
-                Instantiate(EnemyPrefab, obj.transform);
+                Instantiate(EnemyPrefab, obj.transform.position, Quaternion.identity);
             }
         }
         else
         {
-            Instantiate(EnemyPrefab, spawnPoints[0].transform);
+            Instantiate(EnemyPrefab, spawnPoints[0].transform.position, Quaternion.identity);
         }
-    }
-
-    public void Respawn()
-    {
-        SceneManager.LoadScene(0);
     }
 }
