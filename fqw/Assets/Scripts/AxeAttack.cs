@@ -8,7 +8,7 @@ public class AxeAttack : MonoBehaviour
     public Animator anim;
     public EnemyAI enemyai;
     public AttHeaMan charmmanager;
-    public int AxeDamage = 10;
+    public int AxeDamage = 5;
     public BoxCollider boxCol;
     public int FrameCounter = 0;
     public int FrameCounter2 = 0;

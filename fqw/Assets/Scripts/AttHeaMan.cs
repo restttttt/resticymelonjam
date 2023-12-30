@@ -73,6 +73,7 @@ public class AttHeaMan : MonoBehaviour
             if(Ornaments.transform.tag == "Heal")
             {
                 lookatitem = true;
+
                 if(Input.GetKeyDown(KeyCode.E))
                 {
                     pickUp.Play();
@@ -108,7 +109,7 @@ public class AttHeaMan : MonoBehaviour
             if(Ornaments.collider.tag == "Attack")
             {
                 lookatitem = true;
-                if(Input.GetKeyDown(KeyCode.E))
+                if(Input.GetKeyDown(KeyCode.E) && attack <= 5)
                 {
                     pickUp.Play();
                     Debug.Log("+1 att");
@@ -160,9 +161,12 @@ public class AttHeaMan : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.E) && ManaHold)
             {
-                ManaAm -= 1f;
-                mana += 5f;
-                useCharm.Play();
+                if(mana <= 40)
+                {
+                    ManaAm -= 1f;
+                    mana += 10f;
+                    useCharm.Play();
+                }
             }
         }
         if(AttAm != 0 && lookatitem == false)
@@ -176,12 +180,12 @@ public class AttHeaMan : MonoBehaviour
         }
         if(mana != 0 && attack != 0)
         {
-            Axeattk.AxeDamage = 20;
+            Axeattk.AxeDamage = 10;
             Axedam = true;
         }
         else
         {
-            Axeattk.AxeDamage = 10;
+            Axeattk.AxeDamage = 5;
             Axedam = false;
         }
 
