@@ -24,6 +24,7 @@ public class AttHeaMan : MonoBehaviour
     public AudioSource pickUp;
     public bool Axedam = false;
     public Slider ManaSlider;
+    public Slider ATKSlider;
 
     public AudioSource useCharm;
 
@@ -45,6 +46,7 @@ public class AttHeaMan : MonoBehaviour
     void Update()
     {
         ManaSlider.value = mana;
+        ATKSlider.value = attack;
         lookatitem = false;
 
         if(HealHold == true)
