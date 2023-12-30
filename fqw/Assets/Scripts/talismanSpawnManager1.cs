@@ -1,26 +1,26 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class enemySpawnManager : MonoBehaviour
+public class talismanSpawnManager1 : MonoBehaviour
 {
-    public int NumOfEnemies;
-    public GameObject[] EnemiesInScene;
+    public int NumOfTal;
+    public GameObject[] TalismansInScene;
     public GameObject[] spawnPoints;
     public int RandomNum;
     public int RandomNum2;
-    public GameObject EnemyPrefab;
+    public GameObject TalismanPrefab;
     private int i = 0;
 
     void Start()
     {
-        spawnPoints = GameObject.FindGameObjectsWithTag("Spawn Point");
-        EnemiesInScene = GameObject.FindGameObjectsWithTag("Enemy");
-        Spawn();
+        spawnPoints = GameObject.FindGameObjectsWithTag("Talisman Spawnpoint");
+        TalismansInScene = GameObject.FindGameObjectsWithTag("Talisman");
+       
     }
     // Update is called once per frame
     void FixedUpdate()
     {
-        EnemiesInScene = GameObject.FindGameObjectsWithTag("Enemy");
+        TalismansInScene = GameObject.FindGameObjectsWithTag("Talisman");
         RandomNum2 = Random.Range(0,100);
         if (i >= 250)
         {
@@ -29,12 +29,12 @@ public class enemySpawnManager : MonoBehaviour
             {
                 Spawn();
             }
-            else if (EnemiesInScene.Length == 0)
+            else if (TalismansInScene.Length == 0)
             {
                 Spawn();
             }else
             {
-                Instantiate(EnemyPrefab, spawnPoints[0].transform.position, Quaternion.identity);
+                Instantiate(TalismanPrefab, spawnPoints[0].transform.position, Quaternion.identity);
             }
             i = 0;
         }
@@ -47,26 +47,26 @@ public class enemySpawnManager : MonoBehaviour
         Debug.Log("Spawn func called");
         RandomNum = Random.Range(0, 10);
 
-        NumOfEnemies = EnemiesInScene.Length;
-        if (NumOfEnemies < 10 && RandomNum % 2 == 0)
+        NumOfTal = TalismansInScene.Length;
+        if (NumOfTal < 10 && RandomNum % 2 == 0)
         {
             foreach (GameObject obj in spawnPoints)
             {
-                Instantiate(EnemyPrefab, obj.transform.position, Quaternion.identity);
+                Instantiate(TalismanPrefab, obj.transform.position, Quaternion.identity);
             }
         }
-    else if (NumOfEnemies < 15 && RandomNum % 2 == 0)
+    else if (NumOfTal < 15 && RandomNum % 2 == 0)
     {
         // Adjust the condition or add different logic for this case
         // For example, you might want to spawn a different type of enemy.
         foreach (GameObject obj in spawnPoints)
         {
-            Instantiate(EnemyPrefab, obj.transform.position, Quaternion.identity);
+            Instantiate(TalismanPrefab, obj.transform.position, Quaternion.identity);
         }
     }
     else
     {
-        Instantiate(EnemyPrefab, spawnPoints[0].transform.position, Quaternion.identity);
+        Instantiate(TalismanPrefab, spawnPoints[0].transform.position, Quaternion.identity);
     }
 
     }
