@@ -23,8 +23,10 @@ public class AttHeaMan : MonoBehaviour
     public AudioSource pickUp;
     public bool Axedam = false;
 
+    public AudioSource useCharm;
+
     
-    // Start is called before the first frame update
+    // Start is called be.efore the first frame update
     void Start()
     {
         Heal.SetActive(false);
@@ -148,6 +150,7 @@ public class AttHeaMan : MonoBehaviour
             {
                 HealAm -= 1f;
                 healthsys.PlayerHealth += 10;
+                useCharm.Play();
             }
         }
         if(ManaAm != 0 && lookatitem == false)
@@ -156,6 +159,7 @@ public class AttHeaMan : MonoBehaviour
             {
                 ManaAm -= 1f;
                 mana += 5f;
+                useCharm.Play();
             }
         }
         if(AttAm != 0 && lookatitem == false)
@@ -164,6 +168,7 @@ public class AttHeaMan : MonoBehaviour
             {
                 attack += 1f;
                 AttAm -= 1f;
+                useCharm.Play();
             }
         }
         if(mana != 0 && attack != 0)

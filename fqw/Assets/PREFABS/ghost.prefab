@@ -103,6 +103,8 @@ MonoBehaviour:
   PlayerPos: {fileID: 0}
   enemyAI: {fileID: 0}
   EnemyHealth: 20
+  hit: 0
+  axe: {fileID: 5082003931246849749, guid: f27140201ea4dd849b7be931c198401a, type: 3}
 --- !u!1 &7289360475540508871
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,9 @@ public class EnemyAI : MonoBehaviour
     public Transform PlayerPos;
     public NavMeshAgent enemyAI;
     public int EnemyHealth = 20;
+    public bool hit = false;
+    public AxeAttack axe;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,13 +25,19 @@ public class EnemyAI : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
     }
     void OnTriggerEnter(UnityEngine.Collider other)
     {
+        
         Debug.Log("DMG");
         if (other.gameObject.tag == "weapon")
         {
+            
             EnemyHealth -= other.gameObject.GetComponent<AxeAttack>().AxeDamage;
+            hit = true;
+            GameObject blood = Instantiate(axe.bloodVFX, axe.bloodpos.transform.position, axe.transform.rotation);
+            
         }
     }
 }

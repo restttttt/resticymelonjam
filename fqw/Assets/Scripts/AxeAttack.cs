@@ -6,6 +6,7 @@ using UnityEngine;
 public class AxeAttack : MonoBehaviour
 {
     public Animator anim;
+    public EnemyAI enemyai;
     public AttHeaMan charmmanager;
     public int AxeDamage = 10;
     public BoxCollider boxCol;
@@ -13,6 +14,10 @@ public class AxeAttack : MonoBehaviour
     public int FrameCounter2 = 0;
     public bool Attacking;
     public bool readyToAttack;
+    
+    public GameObject  bloodVFX;
+    public GameObject bloodpos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,10 +45,17 @@ public class AxeAttack : MonoBehaviour
                 Attacking = true;
                 readyToAttack = false;
                 anim.SetTrigger("swing");
+
+                
+
+                
+                
+
                 if(charmmanager.Axedam)
                 {
                     charmmanager.attack -= 1f;
                 }
+
             }
         }
         if (Attacking)
