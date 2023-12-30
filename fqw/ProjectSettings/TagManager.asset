@@ -13,6 +13,7 @@ TagManager:
   - Polaroid
   - Item Spawnpoint
   - Talisman Spawnpoint
+  - deathsfx
   layers:
   - Default
   - TransparentFX
