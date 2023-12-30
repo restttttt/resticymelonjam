@@ -17,12 +17,12 @@ public class GameManager : MonoBehaviour
         TalismanSpawnPoints = GameObject.FindGameObjectsWithTag("Talisman Spawnpoint");
         CharmSpawnPoints = GameObject.FindGameObjectsWithTag("Item Spawnpoint");
 
-        /*foreach(GameObject obj in TalismanPrefabs)
+        foreach(GameObject obj in TalismanPrefabs)
         {
             Debug.Log("Inst 1  " + i);
             Instantiate(obj, TalismanSpawnPoints[i].transform.position, Quaternion.identity);
             i++;
-        }*/
+        }
         foreach (GameObject obj in CharmSpawnPoints)
         {
             Debug.Log("Inst 2  " + j);
