@@ -46,7 +46,7 @@ public class EnemySpawnManager : MonoBehaviour
         RandomNum = Random.Range(0,10);
 
         NumOfEnemies = EnemiesInScene.Length;
-        if (NumOfEnemies < 10 && RandomNum % 2 == 0)
+        if (NumOfEnemies < 10)
         {
             foreach(GameObject obj in spawnPoints)
             {
