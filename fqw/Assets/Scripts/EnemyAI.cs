@@ -24,7 +24,7 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         enemyAI.SetDestination(PlayerPos.position);
-        if(EnemyHealth == 0)
+        if(EnemyHealth <= 0)
         {
             Death.GetComponent<AudioSource>().Play();
             Destroy(gameObject);
