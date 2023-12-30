@@ -1,10 +1,13 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+
 public class HealthSystem : MonoBehaviour
 {
     public int PlayerHealth = 100;
-    public GameObject DedScreen;
+    
     public Slider slider;
 
     void OnCollisionEnter(Collision col)
@@ -19,7 +22,7 @@ public class HealthSystem : MonoBehaviour
     {
         if (PlayerHealth == 0)
         {
-            DedScreen.SetActive(true);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         slider.value = PlayerHealth;
         
