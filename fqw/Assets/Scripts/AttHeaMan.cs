@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class AttHeaMan : MonoBehaviour
 {
+    
     public HealthSystem healthsys;
     public AxeAttack Axeattk;
     public GameObject Heal;
