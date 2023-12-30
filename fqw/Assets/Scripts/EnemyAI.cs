@@ -33,11 +33,14 @@ public class EnemyAI : MonoBehaviour
         Debug.Log("DMG");
         if (other.gameObject.tag == "weapon")
         {
-            
+
             EnemyHealth -= other.gameObject.GetComponent<AxeAttack>().AxeDamage;
             hit = true;
-            GameObject blood = Instantiate(axe.bloodVFX, axe.bloodpos.transform.position, axe.transform.rotation);
-            
+            Instantiate(axe.bloodVFX, axe.bloodpos.transform.position, axe.transform.rotation);
+        }else if (other.gameObject.tag == "Polaroid")
+        {
+            EnemyHealth -= other.gameObject.GetComponent<PolaroidAttack>().PolaroidDmg;
+            hit = true;
         }
     }
 }
