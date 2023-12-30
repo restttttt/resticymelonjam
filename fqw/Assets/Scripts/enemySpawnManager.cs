@@ -45,26 +45,29 @@ public class enemySpawnManager : MonoBehaviour
     void Spawn()
     {
         Debug.Log("Spawn func called");
-        RandomNum = Random.Range(0,10);
+        RandomNum = Random.Range(0, 10);
 
         NumOfEnemies = EnemiesInScene.Length;
-        if (NumOfEnemies < 10)
+        if (NumOfEnemies < 10 && RandomNum % 2 == 0)
         {
-            foreach(GameObject obj in spawnPoints)
+            foreach (GameObject obj in spawnPoints)
             {
                 Instantiate(EnemyPrefab, obj.transform.position, Quaternion.identity);
             }
         }
-        else if (NumOfEnemies < 15 && RandomNum % 2 == 0)
+    else if (NumOfEnemies < 15 && RandomNum % 2 == 0)
+    {
+        // Adjust the condition or add different logic for this case
+        // For example, you might want to spawn a different type of enemy.
+        foreach (GameObject obj in spawnPoints)
         {
-            foreach(GameObject obj in spawnPoints)
-            {
-                Instantiate(EnemyPrefab, obj.transform.position, Quaternion.identity);
-            }
+            Instantiate(EnemyPrefab, obj.transform.position, Quaternion.identity);
         }
-        else
-        {
-            Instantiate(EnemyPrefab, spawnPoints[0].transform.position, Quaternion.identity);
-        }
+    }
+    else
+    {
+        Instantiate(EnemyPrefab, spawnPoints[0].transform.position, Quaternion.identity);
+    }
+
     }
 }
