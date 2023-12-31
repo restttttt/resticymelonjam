@@ -39634,7 +39634,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9160928231051909265}
   m_Layer: 0
-  m_Name: ghost
+  m_Name: ghostt
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
