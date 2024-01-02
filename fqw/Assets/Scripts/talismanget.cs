@@ -12,18 +12,39 @@ public class talismanget : MonoBehaviour
     public AudioSource get;
     public AttHeaMan at;
     public float charm = 0f;
+    public bool i;
+    public int fc1;
+    public GameObject obj;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        obj.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (charm == 3)
+        {
+        at.ManaAm += 1f;
+        at.AttAm += 1f;
+        at.HealAm += 1f;
+        i = true;
+        charm = 0;
+        }
+        if (i)
+        {
+        fc1++;
+        obj.SetActive(true);
+        if(fc1>=150)
+        {
+        i = false;
+        fc1 = 0;
+        obj.SetActive(false);
+        }
+         }
 
 
 
